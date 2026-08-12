@@ -44,7 +44,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .button-cream:hover { background: white; border-color: white; }
 .button-full { width: 100%; }
 
-.hero { min-height: calc(100svh - 116px); position: relative; display: flex; align-items: center; overflow: hidden; background: var(--forest-950); color: white; }
+.hero { min-height: calc(100svh - 82px); position: relative; display: flex; align-items: center; overflow: hidden; background: var(--forest-950); color: white; }
 .hero-image { object-fit: cover; object-position: center; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10, 27, 23, .97) 0%, rgba(10, 27, 23, .87) 37%, rgba(10, 27, 23, .34) 68%, rgba(10, 27, 23, .08) 100%), linear-gradient(0deg, rgba(10, 27, 23, .38), transparent 45%); }
 .hero-content { position: relative; z-index: 2; width: min(760px, 64vw); padding: 72px clamp(24px, 7vw, 112px); }

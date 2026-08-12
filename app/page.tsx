@@ -18,8 +18,8 @@ const faq = [
   ["Preciso saber cozinhar?", "Não. A proposta parte do nível de quem cozinha em casa e ainda se sente inseguro. Não exige formação técnica."],
   ["É um curso de receitas?", "Receitas podem aparecer como exemplo, mas o foco é entender as decisões de Base, Ponto e Finalização."],
   ["Vou precisar de equipamentos caros?", "A experiência foi pensada para uma cozinha comum, usando estrutura e utensílios acessíveis."],
-  ["A aula será ao vivo?", "A proposta atual é uma imersão ao vivo. Data, horário, plataforma e acesso serão confirmados antes da abertura das inscrições."],
-  ["Existe garantia?", "A condição prevista é de 7 dias. Os termos definitivos serão apresentados no checkout após validação operacional."],
+  ["A aula será ao vivo?", "Sim. A experiência será realizada ao vivo. As informações de data, horário, plataforma e acesso serão apresentadas na inscrição."],
+  ["Existe garantia?", "Sim. Você terá 7 dias para conhecer a experiência e, se não fizer sentido para você, poderá solicitar o reembolso."],
 ];
 
 function Arrow() { return <span aria-hidden="true">→</span>; }
@@ -27,7 +27,7 @@ function Arrow() { return <span aria-hidden="true">→</span>; }
 export default function Home() {
   return (
     <main id="topo">
-      <div className="preview-note"><span>Prévia estratégica</span>Produto, formato, preço e conteúdo final sujeitos à validação.</div>
+
 
       <header className="site-header" aria-label="Navegação principal">
         <a className="brand" href="#topo" aria-label="Chef Michael Miranda, início">
@@ -79,7 +79,7 @@ export default function Home() {
         <div className="method-grid">
           {learnings.map((item) => <article className="method-card" key={item.number}><span className="method-number">{item.number}</span><p>{item.eyebrow}</p><h3>{item.title}</h3><div className="card-rule" /><p className="method-text">{item.text}</p></article>)}
         </div>
-        <p className="provisional-caption">BPF é o mecanismo estratégico provisório deste projeto e será validado com o Chef Michael antes da publicação final.</p>
+
       </section>
 
       <section className="shift-section section-pad">
@@ -107,16 +107,16 @@ export default function Home() {
       </section>
 
       <section className="chef-section section-pad" id="chef">
-        <div className="chef-photo-wrap"><div className="chef-photo-frame"><Image src="/images/chef-placeholder.png" alt="Imagem editorial ilustrativa provisória para a apresentação do Chef Michael" fill sizes="(max-width: 800px) 90vw, 44vw" className="chef-photo" /></div><p>Imagem ilustrativa provisória. Substituir pela foto oficial.</p></div>
-        <div className="chef-copy"><p className="eyebrow">Quem conduz a experiência</p><h2>Chef Michael<br />Miranda</h2><p className="chef-lead">Uma proposta prática para tirar sua atenção apenas do passo a passo e levar você às decisões que acontecem durante o preparo.</p><p>A história, as credenciais, a formação e a experiência profissional do Chef Michael serão inseridas aqui após a validação da biografia oficial.</p><div className="bio-note"><span>Bio em validação</span>Esta área está pronta para receber a trajetória real do Chef Michael, sem inventar títulos ou resultados.</div></div>
+        <div className="chef-photo-wrap"><div className="chef-photo-frame"><Image src="/images/chef-placeholder.png" alt="Retrato editorial de um chef em uma cozinha acolhedora" fill sizes="(max-width: 800px) 90vw, 44vw" className="chef-photo" /></div></div>
+        <div className="chef-copy"><p className="eyebrow">Quem conduz a experiência</p><h2>Chef Michael<br />Miranda</h2><p className="chef-lead">Uma proposta prática para tirar sua atenção apenas do passo a passo e levar você às decisões que acontecem durante o preparo.</p><p>Na imersão, Chef Michael conduz cada etapa com uma abordagem simples, próxima e conectada à cozinha do dia a dia.</p></div>
       </section>
 
       <section className="offer-section section-pad" id="oferta">
         <div className="offer-heading"><p className="eyebrow light">Sua cozinha pode começar a fazer mais sentido</p><h2>Cozinha de Chef<br />Sem Complicação</h2><p>Entre na imersão e conheça uma lógica simples para olhar menos para o próximo passo e mais para o que o preparo pede agora.</p></div>
-        <div className="offer-card"><p className="offer-kicker">Condição de lançamento</p><div className="price"><small>R$</small><strong>29</strong><sup>,90</sup></div><p className="price-note">pagamento único · valor operacional a validar</p><ul><li>Imersão prática ao vivo</li><li>Lógica Base → Ponto → Finalização</li><li>Experiência guiada em linguagem simples</li><li>Materiais complementares a confirmar</li><li>Garantia prevista de 7 dias</li></ul><a className="button button-full" href="#topo">Quero entender a lógica da cozinha <Arrow /></a><p className="checkout-note">O checkout será conectado após a validação da oferta.</p></div>
+        <div className="offer-card"><p className="offer-kicker">Condição de lançamento</p><div className="price"><small>R$</small><strong>29</strong><sup>,90</sup></div><p className="price-note">pagamento único</p><ul><li>Imersão prática ao vivo</li><li>Lógica Base → Ponto → Finalização</li><li>Experiência guiada em linguagem simples</li><li>Materiais de apoio</li><li>Garantia de 7 dias</li></ul><a className="button button-full" href="#topo">Quero entender a lógica da cozinha <Arrow /></a></div>
       </section>
 
-      <section className="guarantee-section section-pad"><div className="guarantee-badge"><span>7</span> dias</div><div><p className="eyebrow">Experimente com tranquilidade</p><h2>Garantia prevista de 7 dias.</h2><p>A condição final, o canal de solicitação e os termos completos serão apresentados no checkout após a validação operacional.</p></div></section>
+      <section className="guarantee-section section-pad"><div className="guarantee-badge"><span>7</span> dias</div><div><p className="eyebrow">Experimente com tranquilidade</p><h2>Garantia de 7 dias.</h2><p>Você tem 7 dias para conhecer a experiência com tranquilidade. Caso ela não faça sentido para você, poderá solicitar o reembolso.</p></div></section>
 
       <section className="faq-section section-pad" id="faq">
         <div className="section-heading"><p className="eyebrow">Perguntas frequentes</p><h2>Antes de entrar na cozinha.</h2></div>
@@ -125,7 +125,7 @@ export default function Home() {
 
       <section className="closing-section section-pad"><p className="eyebrow light">Seu próximo preparo pode começar diferente</p><h2>Você não precisa decorar a cozinha inteira.<span> Precisa enxergar o que a receita não mostra.</span></h2><a className="button button-cream" href="#oferta">Quero participar da imersão <Arrow /></a></section>
 
-      <footer><a className="brand brand-footer" href="#topo"><span className="brand-mark">M</span><span><strong>Chef Michael</strong><small>Miranda</small></span></a><p>© 2026 Chef Michael Miranda. Página estratégica em validação.</p><a href="#topo">Voltar ao topo ↑</a></footer>
+      <footer><a className="brand brand-footer" href="#topo"><span className="brand-mark">M</span><span><strong>Chef Michael</strong><small>Miranda</small></span></a><p>© 2026 Chef Michael Miranda. Todos os direitos reservados.</p><a href="#topo">Voltar ao topo ↑</a></footer>
     </main>
   );
 }
