@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const learnings = [
   { number: "01", title: "Base", eyebrow: "Onde o sabor começa", text: "Entenda como temperatura, gordura, aromáticos e ordem de entrada constroem o começo do preparo." },
-  { number: "02", title: "Ponto", eyebrow: "O que a comida está dizendo", text: "Aprenda a observar cor, aroma, som e textura — sem depender apenas dos minutos escritos na receita." },
+  { number: "02", title: "Ponto", eyebrow: "O que a comida está dizendo", text: "Aprenda a observar cor, aroma, som e textura, sem depender apenas dos minutos escritos na receita." },
   { number: "03", title: "Finalização", eyebrow: "A decisão que fecha o prato", text: "Prove com intenção e perceba quando falta equilíbrio, frescor, contraste ou aquele último ajuste." },
 ];
 
@@ -30,7 +30,7 @@ export default function Home() {
       <div className="preview-note"><span>Prévia estratégica</span>Produto, formato, preço e conteúdo final sujeitos à validação.</div>
 
       <header className="site-header" aria-label="Navegação principal">
-        <a className="brand" href="#topo" aria-label="Chef Michael Miranda — início">
+        <a className="brand" href="#topo" aria-label="Chef Michael Miranda, início">
           <span className="brand-mark">M</span>
           <span><strong>Chef Michael</strong><small>Miranda</small></span>
         </a>
@@ -45,7 +45,7 @@ export default function Home() {
           <p className="eyebrow light">Imersão prática com Chef Michael Miranda</p>
           <h1 id="hero-title">Talvez você não seja<em> ruim na cozinha.</em></h1>
           <p className="hero-lead">Talvez só esteja cozinhando sem referência.</p>
-          <p className="hero-copy">Aprenda a observar as três decisões que mudam um preparo — sem decorar dezenas de receitas, sem equipamento caro e sem complicar sua cozinha.</p>
+          <p className="hero-copy">Aprenda a observar as três decisões que mudam um preparo. Sem decorar dezenas de receitas, sem equipamento caro e sem complicar sua cozinha.</p>
           <div className="hero-actions">
             <a className="button" href="#oferta">Quero entender o que falta <Arrow /></a>
             <a className="text-link" href="#metodo">Conhecer a lógica BPF</a>
@@ -60,7 +60,7 @@ export default function Home() {
       <section className="truth-section section-pad">
         <div className="section-label">Uma verdade que muda o jogo</div>
         <blockquote>“Receita não ensina você a cozinhar.<span> Ela ensina você a repetir um prato.”</span></blockquote>
-        <p>E repetir funciona — até o fogo mudar, o ingrediente reagir diferente ou o tempo escrito deixar de fazer sentido. É aí que a diferença aparece.</p>
+        <p>E repetir funciona até o fogo mudar, o ingrediente reagir diferente ou o tempo escrito deixar de fazer sentido. É aí que a diferença aparece.</p>
       </section>
 
       <section className="problem-section section-pad">
@@ -68,7 +68,7 @@ export default function Home() {
           <div><p className="eyebrow">Se isso já aconteceu com você…</p><h2>Você recebeu instruções.<br />Mas não recebeu referências.</h2></div>
           <div className="problem-story">
             <p>Você separa os ingredientes. Segue a ordem. Marca o tempo. Faz tudo como está escrito.</p>
-            <p>Aí prova — e parece que faltou alguma coisa. Se dá errado, troca a receita. Se dá certo, não sabe exatamente por quê.</p>
+            <p>Aí prova e parece que faltou alguma coisa. Se dá errado, troca a receita. Se dá certo, não sabe exatamente por quê.</p>
             <p className="accent-line">O problema não é falta de jeito. É não saber o que observar entre um passo e outro.</p>
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Home() {
 
       <section className="immersion-section section-pad" id="imersao">
         <div className="immersion-copy">
-          <p className="eyebrow light">Cozinha de Chef Sem Complicação</p><h2>Uma imersão para quem quer entender — não apenas repetir.</h2>
+          <p className="eyebrow light">Cozinha de Chef Sem Complicação</p><h2>Uma imersão para quem quer entender, não apenas repetir.</h2>
           <p>Uma experiência intensiva, em linguagem simples, para acompanhar um preparo do começo ao fim e perceber onde cada decisão interfere no resultado.</p>
           <ul><li>Explicação direta, sem exigir conhecimento técnico prévio.</li><li>Demonstrações conectadas à cozinha do dia a dia.</li><li>Perguntas práticas para observar, provar e ajustar.</li><li>Aplicação do raciocínio em diferentes momentos do preparo.</li></ul>
           <a className="button button-cream" href="#oferta">Quero participar da imersão <Arrow /></a>
@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       <section className="chef-section section-pad" id="chef">
-        <div className="chef-photo-wrap"><div className="chef-photo-frame"><Image src="/images/chef-placeholder.png" alt="Imagem editorial ilustrativa provisória para a apresentação do Chef Michael" fill sizes="(max-width: 800px) 90vw, 44vw" className="chef-photo" /></div><p>Imagem ilustrativa provisória — substituir pela foto oficial.</p></div>
+        <div className="chef-photo-wrap"><div className="chef-photo-frame"><Image src="/images/chef-placeholder.png" alt="Imagem editorial ilustrativa provisória para a apresentação do Chef Michael" fill sizes="(max-width: 800px) 90vw, 44vw" className="chef-photo" /></div><p>Imagem ilustrativa provisória. Substituir pela foto oficial.</p></div>
         <div className="chef-copy"><p className="eyebrow">Quem conduz a experiência</p><h2>Chef Michael<br />Miranda</h2><p className="chef-lead">Uma proposta prática para tirar sua atenção apenas do passo a passo e levar você às decisões que acontecem durante o preparo.</p><p>A história, as credenciais, a formação e a experiência profissional do Chef Michael serão inseridas aqui após a validação da biografia oficial.</p><div className="bio-note"><span>Bio em validação</span>Esta área está pronta para receber a trajetória real do Chef Michael, sem inventar títulos ou resultados.</div></div>
       </section>
 

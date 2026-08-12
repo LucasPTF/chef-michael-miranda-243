@@ -135,10 +135,10 @@ h2 { margin: 18px 0 24px; color: var(--forest-900); font: 400 clamp(40px, 4.8vw,
 .offer-heading > p:last-child { max-width: 620px; color: rgba(255,255,255,.67); font-size: 17px; line-height: 1.75; }
 .offer-card { padding: 42px; color: var(--ink); background: var(--cream-soft); box-shadow: 18px 18px 0 var(--terracotta); }
 .offer-kicker { color: var(--terracotta); font-size: 10px; font-weight: 800; letter-spacing: .17em; text-transform: uppercase; }
-.price { display: flex; align-items: flex-start; color: var(--forest-900); margin: 18px 0 2px; }
-.price small { margin-top: 17px; font-size: 18px; }
+.price { display: flex; align-items: baseline; gap: 4px; color: var(--forest-900); margin: 18px 0 2px; }
+.price small { margin: 0; font-size: 18px; }
 .price strong { font: 400 92px/.86 var(--font-display); letter-spacing: -.06em; }
-.price sup { margin-top: 8px; font: 400 30px/1 var(--font-display); }
+.price sup { margin: 0; position: static; vertical-align: baseline; font: 400 30px/1 var(--font-display); }
 .price-note, .checkout-note { color: #817166; font-size: 10px; }
 .offer-card ul { margin: 28px 0; }
 .offer-card li { border-color: var(--line); }
