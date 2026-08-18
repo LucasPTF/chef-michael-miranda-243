@@ -78,11 +78,14 @@ export default function Home() {
     <main id="topo">
       <header className="site-header" aria-label="Navegação principal">
         <a className="brand" href="#topo" aria-label="Chef Michael Miranda, início">
-          <span className="brand-monogram">MM</span>
-          <span className="brand-text">
-            <strong>Chef Michael Miranda</strong>
-            <small>Gastronomia Low Carb</small>
-          </span>
+          <Image
+            src="/images/logo-receitas-low-carb.png"
+            alt="Receitas Low Carb"
+            width={230}
+            height={153}
+            priority
+            className="brand-logo"
+          />
         </a>
         <nav aria-label="Seções da página">
           <a href="#intensivo">O Intensivo</a>
@@ -369,8 +372,13 @@ export default function Home() {
 
       <footer>
         <a className="brand brand-footer" href="#topo">
-          <span className="brand-monogram">MM</span>
-          <span className="brand-text"><strong>Chef Michael Miranda</strong><small>Gastronomia Low Carb</small></span>
+          <Image
+            src="/images/logo-receitas-low-carb.png"
+            alt="Receitas Low Carb"
+            width={230}
+            height={153}
+            className="brand-logo brand-logo-footer"
+          />
         </a>
         <p>© 2026 Chef Michael Miranda. Todos os direitos reservados.</p>
         <a href="#topo">Voltar ao topo</a>
