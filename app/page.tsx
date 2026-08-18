@@ -1,131 +1,380 @@
 import Image from "next/image";
 
-const learnings = [
-  { number: "01", title: "Base", eyebrow: "Onde o sabor começa", text: "Entenda como temperatura, gordura, aromáticos e ordem de entrada constroem o começo do preparo." },
-  { number: "02", title: "Ponto", eyebrow: "O que a comida está dizendo", text: "Aprenda a observar cor, aroma, som e textura, sem depender apenas dos minutos escritos na receita." },
-  { number: "03", title: "Finalização", eyebrow: "A decisão que fecha o prato", text: "Prove com intenção e perceba quando falta equilíbrio, frescor, contraste ou aquele último ajuste." },
+const checkoutUrl = "#inscricao";
+
+const recipes = [
+  {
+    number: "01",
+    title: "Pão low carb fermentado",
+    text: "Entenda o pré fermento, o ponto da massa e os detalhes que fazem o pão crescer e ganhar uma textura muito melhor.",
+  },
+  {
+    number: "02",
+    title: "Pizza leve e saborosa",
+    text: "Aprenda uma massa que funciona de verdade e descubra como acertar textura, sabor e execução.",
+  },
+  {
+    number: "03",
+    title: "Chocolate caseiro",
+    text: "Prepare o chocolate que será usado no bolo e entenda como equilibrar os ingredientes sem complicação.",
+  },
+  {
+    number: "04",
+    title: "Bolo prestígio low carb",
+    text: "Faça um bolo úmido, saboroso e com boa textura, sem repetir os erros que deixam a massa seca ou pesada.",
+  },
 ];
 
 const forYou = [
-  "Segue a receita inteira e ainda sente que alguma coisa ficou faltando.",
-  "Cozinha com o celular na mão e trava quando algo sai do roteiro.",
-  "Acha que cozinhar melhor exige talento natural ou equipamento caro.",
-  "Quer entender o preparo sem entrar em excesso de termos técnicos.",
-  "Deseja ganhar referências para decidir com mais clareza.",
+  "Já tentou receitas low carb que ficaram secas, pesadas ou simplesmente não deram certo.",
+  "Quer emagrecer sem viver de frango seco, salada e comida sem graça.",
+  "Está começando na low carb e quer aprender do jeito certo desde o início.",
+  "Já faz low carb, mas ainda depende de receitas prontas e tem medo de improvisar.",
+  "Quer cozinhar algo gostoso que também possa servir para toda a família.",
+  "Cansou de desperdiçar ingredientes em tentativas frustradas.",
 ];
 
 const faq = [
-  ["Preciso saber cozinhar?", "Não. A proposta parte do nível de quem cozinha em casa e ainda se sente inseguro. Não exige formação técnica."],
-  ["É um curso de receitas?", "Receitas podem aparecer como exemplo, mas o foco é entender as decisões de Base, Ponto e Finalização."],
-  ["Vou precisar de equipamentos caros?", "A experiência foi pensada para uma cozinha comum, usando estrutura e utensílios acessíveis."],
-  ["A aula será ao vivo?", "Sim. A experiência será realizada ao vivo. As informações de data, horário, plataforma e acesso serão apresentadas na inscrição."],
-  ["Existe garantia?", "Sim. Você terá 7 dias para conhecer a experiência e, se não fizer sentido para você, poderá solicitar o reembolso."],
+  [
+    "Nunca fiz low carb. Vou conseguir acompanhar?",
+    "Sim. O Intensivo foi pensado para quem está começando ou quer recomeçar com uma explicação simples, prática e passo a passo.",
+  ],
+  [
+    "Eu não sei cozinhar. Essa aula é para mim?",
+    "É. Você não precisa ter experiência. O Chef Michael mostra cada etapa e explica o motivo por trás do preparo para você entender o que está fazendo.",
+  ],
+  [
+    "Já comprei outros cursos de receitas. O que muda aqui?",
+    "Aqui você não recebe somente ingredientes e modo de preparo. Você aprende os pontos de execução que fazem a receita funcionar e como evitar os erros mais comuns.",
+  ],
+  [
+    "Vou precisar comprar ingredientes caros?",
+    "Não é essa a proposta. Sempre que possível, o Chef Michael mostra escolhas inteligentes e substituições para evitar gastos e desperdício desnecessários.",
+  ],
+  [
+    "Consigo fazer as receitas para a minha família?",
+    "Sim. A ideia é preparar comida de verdade, saborosa e possível de entrar na rotina da casa, sem precisar cozinhar uma refeição de dieta separada.",
+  ],
+  [
+    "Como vou receber as informações da aula?",
+    "Depois da inscrição, você receberá as orientações de acesso e entrará no grupo de WhatsApp do Intensivo, onde serão enviados os avisos e o link da transmissão.",
+  ],
 ];
 
-function Arrow() { return <span aria-hidden="true">→</span>; }
+function Arrow() {
+  return <span aria-hidden="true">→</span>;
+}
+
+function CTA({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  return (
+    <a className={`button${light ? " button-light" : ""}`} href={checkoutUrl}>
+      {children} <Arrow />
+    </a>
+  );
+}
 
 export default function Home() {
   return (
     <main id="topo">
-
-
       <header className="site-header" aria-label="Navegação principal">
         <a className="brand" href="#topo" aria-label="Chef Michael Miranda, início">
-          <span className="brand-mark">M</span>
-          <span><strong>Chef Michael</strong><small>Miranda</small></span>
+          <span className="brand-monogram">MM</span>
+          <span className="brand-text">
+            <strong>Chef Michael Miranda</strong>
+            <small>Gastronomia Low Carb</small>
+          </span>
         </a>
-        <nav><a href="#metodo">O método</a><a href="#imersao">A imersão</a><a href="#chef">O Chef</a></nav>
-        <a className="button button-small" href="#oferta">Quero participar <Arrow /></a>
+        <nav aria-label="Seções da página">
+          <a href="#intensivo">O Intensivo</a>
+          <a href="#tecnica">A técnica</a>
+          <a href="#chef">O Chef</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <a className="button button-small" href={checkoutUrl}>
+          Quero participar <Arrow />
+        </a>
       </header>
 
       <section className="hero" aria-labelledby="hero-title">
-        <Image src="/images/hero-cozinha.png" alt="Mãos de um chef finalizando uma preparação colorida em uma cozinha acolhedora" fill priority sizes="100vw" className="hero-image" />
-        <div className="hero-shade" />
-        <div className="hero-content">
-          <p className="eyebrow light">Imersão prática com Chef Michael Miranda</p>
-          <h1 id="hero-title">Talvez você não seja<em> ruim na cozinha.</em></h1>
-          <p className="hero-lead">Talvez só esteja cozinhando sem referência.</p>
-          <p className="hero-copy">Aprenda a observar as três decisões que mudam um preparo. Sem decorar dezenas de receitas, sem equipamento caro e sem complicar sua cozinha.</p>
+        <div className="hero-copy">
+          <p className="eyebrow">Intensivo de Receitas Low Carb ao vivo</p>
+          <h1 id="hero-title">
+            Pão que cresce. Pizza leve. <em>Bolo que não vira tijolo.</em>
+          </h1>
+          <p className="hero-lead">
+            Passe um dia na cozinha com o Chef Michael Miranda e aprenda a fazer quatro preparos low carb que realmente funcionam.
+          </p>
+          <p className="hero-support">
+            Mesmo que você não saiba cozinhar ou já tenha desperdiçado ingredientes em receitas que deram errado.
+          </p>
           <div className="hero-actions">
-            <a className="button" href="#oferta">Quero entender o que falta <Arrow /></a>
-            <a className="text-link" href="#metodo">Conhecer a lógica BPF</a>
+            <CTA>Quero cozinhar com o Chef Michael</CTA>
+            <a className="text-link" href="#intensivo">
+              Ver o que vou aprender
+            </a>
           </div>
-          <div className="hero-proof" aria-label="Informações da experiência">
-            <span><strong>Ao vivo</strong> experiência guiada</span><span><strong>Prático</strong> cozinha real</span><span><strong>Simples</strong> sem jargões</span>
+          <div className="hero-facts" aria-label="Informações do Intensivo">
+            <span><strong>Ao vivo</strong> na cozinha</span>
+            <span><strong>5 a 6 horas</strong> de aula prática</span>
+            <span><strong>4 preparos</strong> completos</span>
           </div>
         </div>
-        <div className="scroll-cue" aria-hidden="true">Explore ↓</div>
+        <div className="hero-visual">
+          <Image
+            src="/images/michael-hero.webp"
+            alt="Chef Michael Miranda preparando uma receita low carb em sua cozinha"
+            fill
+            priority
+            sizes="(max-width: 860px) 100vw, 48vw"
+            className="hero-image"
+          />
+          <div className="hero-quote">
+            <span>Receita você copia.</span>
+            <strong>Técnica você leva para a vida inteira.</strong>
+          </div>
+        </div>
       </section>
 
-      <section className="truth-section section-pad">
-        <div className="section-label">Uma verdade que muda o jogo</div>
-        <blockquote>“Receita não ensina você a cozinhar.<span> Ela ensina você a repetir um prato.”</span></blockquote>
-        <p>E repetir funciona até o fogo mudar, o ingrediente reagir diferente ou o tempo escrito deixar de fazer sentido. É aí que a diferença aparece.</p>
-      </section>
-
-      <section className="problem-section section-pad">
+      <section className="problem section-pad">
+        <div className="section-intro">
+          <p className="eyebrow">Talvez o problema nunca tenha sido você</p>
+          <h2>Você não precisa de mais uma receita. Precisa entender por que ela dá certo.</h2>
+        </div>
         <div className="problem-grid">
-          <div><p className="eyebrow">Se isso já aconteceu com você…</p><h2>Você recebeu instruções.<br />Mas não recebeu referências.</h2></div>
-          <div className="problem-story">
-            <p>Você separa os ingredientes. Segue a ordem. Marca o tempo. Faz tudo como está escrito.</p>
-            <p>Aí prova e parece que faltou alguma coisa. Se dá errado, troca a receita. Se dá certo, não sabe exatamente por quê.</p>
-            <p className="accent-line">O problema não é falta de jeito. É não saber o que observar entre um passo e outro.</p>
+          <article>
+            <span>01</span>
+            <h3>Você segue tudo e o pão fica pesado.</h3>
+            <p>A receita mostra a ordem, mas não explica o ponto, a fermentação e os sinais que você precisa observar.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Você troca ingredientes sem saber o que muda.</h3>
+            <p>Uma substituição parece pequena, mas altera textura, estrutura e sabor quando ninguém explica a função de cada ingrediente.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Quando dá errado, você culpa sua habilidade.</h3>
+            <p>Depois de algumas tentativas frustradas, fica fácil acreditar que cozinhar bem é dom. Não é. É técnica bem explicada.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="belief section-pad">
+        <p className="eyebrow eyebrow-gold">A virada de chave</p>
+        <blockquote>
+          “O problema não é falta de força de vontade. <span>É tentar manter a low carb sem um jeito de cozinhar que funcione na vida real.</span>”
+        </blockquote>
+        <p>
+          Quando a comida fica gostosa, o preparo faz sentido e você sabe corrigir os erros, a alimentação saudável deixa de parecer um castigo e começa a caber na rotina.
+        </p>
+      </section>
+
+      <section className="intensive section-pad" id="intensivo">
+        <div className="intensive-heading">
+          <p className="eyebrow">Um dia de resultado real</p>
+          <h2>Quatro preparos para devolver sua confiança na cozinha.</h2>
+          <p>
+            Você pode acompanhar o Chef Michael e fazer junto. Em cada receita, ele mostra o preparo completo e explica os detalhes de execução que mudam o resultado.
+          </p>
+        </div>
+        <div className="recipe-grid">
+          {recipes.map((recipe) => (
+            <article key={recipe.number}>
+              <span>{recipe.number}</span>
+              <h3>{recipe.title}</h3>
+              <p>{recipe.text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="centered-cta">
+          <CTA>Quero aprender as quatro receitas</CTA>
+        </div>
+      </section>
+
+      <section className="mechanism section-pad" id="tecnica">
+        <div className="mechanism-copy">
+          <p className="eyebrow eyebrow-gold">O diferencial do Intensivo</p>
+          <h2>Você não vai apenas assistir. Vai começar a entender.</h2>
+          <p>
+            A maioria dos vídeos entrega ingredientes e modo de preparo. O Chef Michael mostra os pontos que quase nunca aparecem na receita.
+          </p>
+        </div>
+        <div className="mechanism-steps">
+          <article>
+            <span>Entenda</span>
+            <h3>A função dos ingredientes</h3>
+            <p>Saiba por que cada ingrediente entra na receita e o que acontece quando você faz uma substituição.</p>
+          </article>
+          <article>
+            <span>Observe</span>
+            <h3>O ponto de cada etapa</h3>
+            <p>Aprenda a reconhecer textura, fermentação e consistência em vez de depender somente do relógio.</p>
+          </article>
+          <article>
+            <span>Corrija</span>
+            <h3>Os erros mais comuns</h3>
+            <p>Descubra o que costuma dar errado e como aumentar suas chances de repetir um bom resultado em casa.</p>
+          </article>
+        </div>
+      </section>
+
+      <section className="transformation section-pad">
+        <div className="section-intro narrow">
+          <p className="eyebrow">O que muda depois do Intensivo</p>
+          <h2>Você sai com receitas prontas e uma nova forma de olhar para elas.</h2>
+        </div>
+        <div className="before-after">
+          <div className="before">
+            <span>Antes</span>
+            <p>Copiar o passo a passo sem saber o que observar.</p>
+            <p>Ter medo de trocar um ingrediente e perder tudo.</p>
+            <p>Desistir quando o resultado não fica igual ao vídeo.</p>
+          </div>
+          <div className="after">
+            <span>Depois</span>
+            <p>Entender os detalhes que fazem a receita funcionar.</p>
+            <p>Fazer escolhas com mais segurança e menos desperdício.</p>
+            <p>Cozinhar com mais confiança para você e sua família.</p>
           </div>
         </div>
       </section>
 
-      <section className="method-section section-pad" id="metodo">
-        <div className="section-heading centered"><p className="eyebrow light">Uma lógica simples para enxergar o preparo</p><h2>Base. Ponto. Finalização.</h2><p>Três momentos. Três decisões. Um novo jeito de prestar atenção no que acontece dentro da sua panela.</p></div>
-        <div className="method-grid">
-          {learnings.map((item) => <article className="method-card" key={item.number}><span className="method-number">{item.number}</span><p>{item.eyebrow}</p><h3>{item.title}</h3><div className="card-rule" /><p className="method-text">{item.text}</p></article>)}
+      <section className="audience section-pad">
+        <div className="section-intro">
+          <p className="eyebrow">Para quem é o Intensivo</p>
+          <h2>Para quem quer comer low carb com prazer e sem depender da próxima receita da internet.</h2>
         </div>
-
-      </section>
-
-      <section className="shift-section section-pad">
-        <div className="shift-intro"><p className="eyebrow">A transformação</p><h2>Menos “será que vai dar certo?”.<br />Mais clareza para decidir.</h2></div>
-        <div className="shift-list">
-          <div><span>Antes</span><p>Seguir instruções no automático</p></div><Arrow /><div><span>Depois</span><p>Entender a intenção de cada etapa</p></div>
-          <div><span>Antes</span><p>Depender apenas do relógio</p></div><Arrow /><div><span>Depois</span><p>Reconhecer os sinais do preparo</p></div>
-          <div><span>Antes</span><p>Transformar o erro em culpa</p></div><Arrow /><div><span>Depois</span><p>Transformar a tentativa em referência</p></div>
+        <div className="audience-grid">
+          {forYou.map((item, index) => (
+            <article key={item}>
+              <span>0{index + 1}</span>
+              <p>{item}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="immersion-section section-pad" id="imersao">
-        <div className="immersion-copy">
-          <p className="eyebrow light">Cozinha de Chef Sem Complicação</p><h2>Uma imersão para quem quer entender, não apenas repetir.</h2>
-          <p>Uma experiência intensiva, em linguagem simples, para acompanhar um preparo do começo ao fim e perceber onde cada decisão interfere no resultado.</p>
-          <ul><li>Explicação direta, sem exigir conhecimento técnico prévio.</li><li>Demonstrações conectadas à cozinha do dia a dia.</li><li>Perguntas práticas para observar, provar e ajustar.</li><li>Aplicação do raciocínio em diferentes momentos do preparo.</li></ul>
-          <a className="button button-cream" href="#oferta">Quero participar da imersão <Arrow /></a>
+      <section className="chef section-pad" id="chef">
+        <div className="chef-photo">
+          <Image
+            src="/images/michael-about.webp"
+            alt="Chef Michael Miranda segurando uma sobremesa low carb"
+            fill
+            sizes="(max-width: 860px) 100vw, 42vw"
+          />
         </div>
-        <div className="immersion-panel"><span>O que você leva</span><strong>Um novo olhar para a cozinha.</strong><p>Não uma promessa de perfeição. Um caminho para tornar cada tentativa mais compreensível.</p><div className="line-art" aria-hidden="true"><i /><b /><i /></div></div>
+        <div className="chef-copy">
+          <p className="eyebrow">Quem vai cozinhar com você</p>
+          <h2>Chef Michael Miranda</h2>
+          <p className="chef-lead">
+            “Eu também fazia dieta pensando no dia em que poderia abandoná-la.”
+          </p>
+          <p>
+            Michael é bacharel em Gastronomia e trabalha profissionalmente na área desde 2008. Depois de chegar aos 98 kg, viver episódios de compulsão e passar por um susto no pronto socorro, encontrou na low carb um caminho que finalmente conseguiu sustentar.
+          </p>
+          <p>
+            Em cinco meses, eliminou 18 kg. Em 2016, transformou a própria experiência em uma missão: ensinar gastronomia low carb com técnica, sabor e simplicidade.
+          </p>
+          <div className="authority-grid" aria-label="Experiência do Chef Michael">
+            <div><strong>8 mil+</strong><span>alunos</span></div>
+            <div><strong>50</strong><span>cursos e eventos</span></div>
+            <div><strong>10 anos</strong><span>dedicados à low carb</span></div>
+          </div>
+        </div>
       </section>
 
-      <section className="audience-section section-pad">
-        <div className="section-heading"><p className="eyebrow">Essa experiência é para você que…</p><h2>Quer parar de começar do zero a cada receita.</h2></div>
-        <div className="audience-grid">{forYou.map((item, index) => <article key={item}><span>0{index + 1}</span><p>{item}</p></article>)}</div>
+      <section className="proof section-pad">
+        <div className="proof-heading">
+          <p className="eyebrow eyebrow-gold">Técnica que muda a rotina</p>
+          <h2>A maior prova não está no título. Está no que os alunos voltam a fazer.</h2>
+        </div>
+        <div className="proof-cards">
+          <article>
+            <span>Uma conquista que voltou para a mão</span>
+            <p>Uma aluna conseguiu voltar a usar sua aliança depois de sete anos, como consequência de uma alimentação que finalmente conseguiu manter.</p>
+          </article>
+          <article>
+            <span>Comida que inclui, não separa</span>
+            <p>O pai de uma criança com diabetes tipo 1 agradeceu porque a filha pôde levar receitas para a escola e comer com os colegas sem se sentir diferente.</p>
+          </article>
+          <article>
+            <span>Os mesmos ingredientes, outro resultado</span>
+            <p>Alunos descobrem que até uma carne moída pode ficar muito mais saborosa quando aprendem a técnica certa com aquilo que já têm em casa.</p>
+          </article>
+        </div>
       </section>
 
-      <section className="chef-section section-pad" id="chef">
-        <div className="chef-photo-wrap"><div className="chef-photo-frame"><Image src="/images/chef-placeholder.png" alt="Retrato editorial de um chef em uma cozinha acolhedora" fill sizes="(max-width: 800px) 90vw, 44vw" className="chef-photo" /></div></div>
-        <div className="chef-copy"><p className="eyebrow">Quem conduz a experiência</p><h2>Chef Michael<br />Miranda</h2><p className="chef-lead">Uma proposta prática para tirar sua atenção apenas do passo a passo e levar você às decisões que acontecem durante o preparo.</p><p>Na imersão, Chef Michael conduz cada etapa com uma abordagem simples, próxima e conectada à cozinha do dia a dia.</p></div>
+      <section className="offer section-pad" id="inscricao">
+        <div className="offer-copy">
+          <p className="eyebrow eyebrow-gold">Sua próxima receita pode dar certo</p>
+          <h2>Intensivo de Receitas Low Carb</h2>
+          <p>
+            Um dia ao vivo com o Chef Michael para preparar pão, pizza, chocolate e bolo prestígio enquanto você aprende os detalhes que transformam tentativa em resultado.
+          </p>
+          <div className="offer-promise">
+            <span>Receita você encontra na internet.</span>
+            <strong>Técnica é o que muda o jogo.</strong>
+          </div>
+        </div>
+        <div className="offer-card">
+          <p className="offer-label">Ingresso para o Intensivo</p>
+          <div className="price"><small>R$</small><strong>29</strong><sup>,90</sup></div>
+          <p className="price-note">pagamento único</p>
+          <ul>
+            <li>Aula prática ao vivo com duração de 5 a 6 horas</li>
+            <li>Preparo completo de quatro receitas low carb</li>
+            <li>Explicação das técnicas usadas em cada etapa</li>
+            <li>Lista de compras enviada antes da aula</li>
+            <li>Grupo de WhatsApp com avisos e acesso à transmissão</li>
+          </ul>
+          <a className="button button-full" href={checkoutUrl}>
+            Quero participar do Intensivo <Arrow />
+          </a>
+          <p className="microcopy">Menos do que o desperdício de uma única receita que dá errado.</p>
+        </div>
       </section>
 
-      <section className="offer-section section-pad" id="oferta">
-        <div className="offer-heading"><p className="eyebrow light">Sua cozinha pode começar a fazer mais sentido</p><h2>Cozinha de Chef<br />Sem Complicação</h2><p>Entre na imersão e conheça uma lógica simples para olhar menos para o próximo passo e mais para o que o preparo pede agora.</p></div>
-        <div className="offer-card"><p className="offer-kicker">Condição de lançamento</p><div className="price"><small>R$</small><strong>29</strong><sup>,90</sup></div><p className="price-note">pagamento único</p><ul><li>Imersão prática ao vivo</li><li>Lógica Base → Ponto → Finalização</li><li>Experiência guiada em linguagem simples</li><li>Materiais de apoio</li><li>Garantia de 7 dias</li></ul><a className="button button-full" href="#topo">Quero entender a lógica da cozinha <Arrow /></a></div>
+      <section className="not-for section-pad">
+        <div>
+          <p className="eyebrow">Uma escolha honesta</p>
+          <h2>Este Intensivo não é para quem procura milagre sem colocar a mão na massa.</h2>
+        </div>
+        <p>
+          Ele é para quem está disposto a aprender, testar e olhar para a cozinha de um jeito novo. Você não precisa ter experiência. Precisa apenas estar aberto a entender o que está fazendo.
+        </p>
       </section>
 
-      <section className="guarantee-section section-pad"><div className="guarantee-badge"><span>7</span> dias</div><div><p className="eyebrow">Experimente com tranquilidade</p><h2>Garantia de 7 dias.</h2><p>Você tem 7 dias para conhecer a experiência com tranquilidade. Caso ela não faça sentido para você, poderá solicitar o reembolso.</p></div></section>
-
-      <section className="faq-section section-pad" id="faq">
-        <div className="section-heading"><p className="eyebrow">Perguntas frequentes</p><h2>Antes de entrar na cozinha.</h2></div>
-        <div className="faq-list">{faq.map(([question, answer], index) => <details key={question} open={index === 0}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
+      <section className="faq section-pad" id="duvidas">
+        <div className="faq-heading">
+          <p className="eyebrow">Perguntas frequentes</p>
+          <h2>Antes de colocar a mão na massa.</h2>
+        </div>
+        <div className="faq-list">
+          {faq.map(([question, answer], index) => (
+            <details key={question} open={index === 0}>
+              <summary>{question}<span aria-hidden="true">+</span></summary>
+              <p>{answer}</p>
+            </details>
+          ))}
+        </div>
       </section>
 
-      <section className="closing-section section-pad"><p className="eyebrow light">Seu próximo preparo pode começar diferente</p><h2>Você não precisa decorar a cozinha inteira.<span> Precisa enxergar o que a receita não mostra.</span></h2><a className="button button-cream" href="#oferta">Quero participar da imersão <Arrow /></a></section>
+      <section className="closing section-pad">
+        <p className="eyebrow eyebrow-gold">Você não precisa nascer sabendo cozinhar</p>
+        <h2>
+          Só precisa de alguém que mostre <span>o detalhe que a receita não explica.</span>
+        </h2>
+        <CTA light>Quero cozinhar com o Chef Michael</CTA>
+      </section>
 
-      <footer><a className="brand brand-footer" href="#topo"><span className="brand-mark">M</span><span><strong>Chef Michael</strong><small>Miranda</small></span></a><p>© 2026 Chef Michael Miranda. Todos os direitos reservados.</p><a href="#topo">Voltar ao topo ↑</a></footer>
+      <footer>
+        <a className="brand brand-footer" href="#topo">
+          <span className="brand-monogram">MM</span>
+          <span className="brand-text"><strong>Chef Michael Miranda</strong><small>Gastronomia Low Carb</small></span>
+        </a>
+        <p>© 2026 Chef Michael Miranda. Todos os direitos reservados.</p>
+        <a href="#topo">Voltar ao topo</a>
+      </footer>
     </main>
   );
 }
