@@ -79,10 +79,10 @@ export default function Home() {
       <header className="site-header" aria-label="Navegação principal">
         <a className="brand" href="#topo" aria-label="Chef Michael Miranda, início">
           <Image
-            src="/images/logo-receitas-low-carb.png"
+            src="/images/logo-receitas-low-carb-transparente.png"
             alt="Receitas Low Carb"
-            width={230}
-            height={153}
+            width={908}
+            height={539}
             priority
             className="brand-logo"
           />
@@ -124,8 +124,8 @@ export default function Home() {
         </div>
         <div className="hero-visual">
           <Image
-            src="/images/michael-hero.webp"
-            alt="Chef Michael Miranda preparando uma receita low carb em sua cozinha"
+            src="/images/michael-hero-profissional.png"
+            alt="Chef Michael Miranda finalizando um prato low carb em uma cozinha profissional"
             fill
             priority
             sizes="(max-width: 860px) 100vw, 48vw"
@@ -260,8 +260,8 @@ export default function Home() {
       <section className="chef section-pad" id="chef">
         <div className="chef-photo">
           <Image
-            src="/images/michael-about.webp"
-            alt="Chef Michael Miranda segurando uma sobremesa low carb"
+            src="/images/michael-about-profissional.png"
+            alt="Retrato profissional do Chef Michael Miranda em sua cozinha"
             fill
             sizes="(max-width: 860px) 100vw, 42vw"
           />
@@ -373,10 +373,10 @@ export default function Home() {
       <footer>
         <a className="brand brand-footer" href="#topo">
           <Image
-            src="/images/logo-receitas-low-carb.png"
+            src="/images/logo-receitas-low-carb-transparente.png"
             alt="Receitas Low Carb"
-            width={230}
-            height={153}
+            width={908}
+            height={539}
             className="brand-logo brand-logo-footer"
           />
         </a>
