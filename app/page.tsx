@@ -25,6 +25,27 @@ const recipes = [
   },
 ];
 
+const visualRecipes = [
+  {
+    image: "/images/michael-pao-profissional.png",
+    eyebrow: "Fermentação e textura",
+    title: "Pão que cresce de verdade",
+    alt: "Chef Michael Miranda apresentando um pão low carb artesanal recém-assado",
+  },
+  {
+    image: "/images/michael-pizza-profissional.png",
+    eyebrow: "Massa, ponto e forno",
+    title: "Pizza leve, firme e saborosa",
+    alt: "Chef Michael Miranda apresentando uma pizza low carb em uma cozinha profissional",
+  },
+  {
+    image: "/images/michael-sobremesa-profissional.png",
+    eyebrow: "Umidade e equilíbrio",
+    title: "Sobremesa com cara de sobremesa",
+    alt: "Chef Michael Miranda finalizando um bolo prestígio low carb",
+  },
+];
+
 const forYou = [
   "Já tentou receitas low carb que ficaram secas, pesadas ou simplesmente não deram certo.",
   "Quer emagrecer sem viver de frango seco, salada e comida sem graça.",
@@ -172,6 +193,31 @@ export default function Home() {
         </p>
       </section>
 
+      <section className="live-experience" aria-labelledby="experience-title">
+        <div className="experience-photo">
+          <Image
+            src="/images/michael-ensino-profissional.png"
+            alt="Chef Michael Miranda ensinando técnicas low carb em uma cozinha profissional"
+            fill
+            sizes="(max-width: 900px) 100vw, 62vw"
+          />
+          <span className="experience-stamp">Aula ao vivo · prática guiada</span>
+        </div>
+        <div className="experience-copy">
+          <p className="eyebrow eyebrow-gold">Você vê. Você faz. Você entende.</p>
+          <h2 id="experience-title">Uma aula para parar de torcer e começar a saber.</h2>
+          <p>
+            O Chef Michael cozinha com você, mostra o ponto de cada preparo e explica o que ajustar quando a receita reage diferente na sua cozinha.
+          </p>
+          <ol className="experience-steps">
+            <li><span>01</span><strong>Prepare</strong><small>com orientação em cada etapa</small></li>
+            <li><span>02</span><strong>Observe</strong><small>textura, ponto e temperatura</small></li>
+            <li><span>03</span><strong>Repita</strong><small>com muito mais segurança</small></li>
+          </ol>
+          <CTA light>Quero viver essa experiência</CTA>
+        </div>
+      </section>
+
       <section className="intensive section-pad" id="intensivo">
         <div className="intensive-heading">
           <p className="eyebrow">Um dia de resultado real</p>
@@ -179,6 +225,17 @@ export default function Home() {
           <p>
             Você pode acompanhar o Chef Michael e fazer junto. Em cada receita, ele mostra o preparo completo e explica os detalhes de execução que mudam o resultado.
           </p>
+        </div>
+        <div className="recipe-gallery" aria-label="Preparos do Intensivo">
+          {visualRecipes.map((item, index) => (
+            <article className={index === 0 ? "recipe-featured" : ""} key={item.title}>
+              <Image src={item.image} alt={item.alt} fill sizes="(max-width: 760px) 100vw, 34vw" />
+              <div>
+                <span>{item.eyebrow}</span>
+                <h3>{item.title}</h3>
+              </div>
+            </article>
+          ))}
         </div>
         <div className="recipe-grid">
           {recipes.map((recipe) => (
@@ -191,6 +248,25 @@ export default function Home() {
         </div>
         <div className="centered-cta">
           <CTA>Quero aprender as quatro receitas</CTA>
+        </div>
+      </section>
+
+      <section className="kitchen-table" aria-labelledby="table-title">
+        <Image
+          src="/images/michael-bancada-profissional.png"
+          alt="Chef Michael Miranda diante de uma bancada com os preparos do Intensivo Low Carb"
+          fill
+          sizes="100vw"
+        />
+        <div className="kitchen-table-shade" />
+        <div className="kitchen-table-copy">
+          <p className="eyebrow eyebrow-gold">Uma cozinha. Quatro resultados.</p>
+          <h2 id="table-title">Você termina o dia enxergando receita de outro jeito.</h2>
+          <p>Pão, pizza, chocolate e bolo prestígio conectados por uma mesma lógica: entender o ingrediente, reconhecer o ponto e saber como corrigir.</p>
+          <CTA light>Quero reservar meu lugar</CTA>
+        </div>
+        <div className="kitchen-table-index" aria-hidden="true">
+          <span>01 Pão</span><span>02 Pizza</span><span>03 Chocolate</span><span>04 Prestígio</span>
         </div>
       </section>
 

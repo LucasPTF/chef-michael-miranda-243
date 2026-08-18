@@ -77,15 +77,50 @@ h2 { margin: 17px 0 24px; color: var(--forest); font: 400 clamp(42px, 5vw, 72px)
 .belief blockquote span { display: block; color: var(--terracotta); font-style: italic; }
 .belief > p:last-child { max-width: 760px; margin: auto; color: var(--muted); font-size: 16px; line-height: 1.75; }
 
+.live-experience { min-height: 820px; display: grid; grid-template-columns: 1.22fr .78fr; background: var(--forest-dark); color: white; }
+.experience-photo { min-height: 820px; position: relative; overflow: hidden; }
+.experience-photo img { object-fit: cover; object-position: 52% center; }
+.experience-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 58%, rgba(13,42,35,.82) 100%), linear-gradient(0deg, rgba(13,42,35,.46), transparent 45%); }
+.experience-stamp { padding: 14px 18px; position: absolute; z-index: 2; left: 28px; bottom: 28px; border: 1px solid rgba(255,255,255,.38); background: rgba(13,42,35,.74); color: var(--cream); backdrop-filter: blur(8px); font-size: 9px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase; }
+.experience-copy { padding: clamp(64px, 7vw, 112px) clamp(28px, 6vw, 88px); display: flex; flex-direction: column; justify-content: center; position: relative; }
+.experience-copy::before { content: "MICHAEL MIRANDA"; position: absolute; top: 40px; right: 24px; color: rgba(255,255,255,.08); font-size: 9px; font-weight: 900; letter-spacing: .28em; writing-mode: vertical-rl; }
+.experience-copy h2 { margin-bottom: 20px; color: var(--cream); font-size: clamp(44px, 4.8vw, 70px); }
+.experience-copy > p:not(.eyebrow) { max-width: 590px; margin: 0; color: rgba(255,255,255,.67); font-size: 15px; line-height: 1.75; }
+.experience-steps { margin: 34px 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,.17); }
+.experience-steps li { padding: 18px 0; display: grid; grid-template-columns: 38px 105px 1fr; align-items: center; gap: 12px; border-bottom: 1px solid rgba(255,255,255,.17); }
+.experience-steps span { color: var(--gold); font: italic 400 19px/1 var(--display); }
+.experience-steps strong { color: var(--cream); font: 400 20px/1 var(--display); }
+.experience-steps small { color: rgba(255,255,255,.48); font-size: 11px; }
+.experience-copy .button { align-self: flex-start; }
+
 .intensive { background: var(--cream-soft); }
 .intensive-heading { max-width: 850px; }
 .intensive-heading > p:last-child { max-width: 700px; color: var(--muted); font-size: 17px; line-height: 1.75; }
+.recipe-gallery { margin-top: 66px; display: grid; grid-template-columns: 1.15fr .85fr; grid-template-rows: repeat(2, minmax(310px, 1fr)); gap: 16px; max-width: 1360px; }
+.recipe-gallery article { min-height: 310px; position: relative; overflow: hidden; background: var(--forest); }
+.recipe-gallery .recipe-featured { grid-row: 1 / 3; min-height: 636px; }
+.recipe-gallery article::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(13,42,35,.9) 0%, rgba(13,42,35,.05) 58%); }
+.recipe-gallery img { object-fit: cover; object-position: center; transition: transform .55s ease; }
+.recipe-gallery .recipe-featured img { object-position: center 42%; }
+.recipe-gallery article:hover img { transform: scale(1.025); }
+.recipe-gallery article > div { max-width: 620px; position: absolute; z-index: 2; left: clamp(22px, 3vw, 42px); right: 22px; bottom: clamp(22px, 3vw, 40px); color: white; }
+.recipe-gallery span { color: var(--gold); font-size: 9px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; }
+.recipe-gallery h3 { margin: 10px 0 0; color: var(--cream); font: 400 clamp(27px, 3vw, 45px)/1.05 var(--display); }
 .recipe-grid { margin-top: 66px; display: grid; grid-template-columns: repeat(2, 1fr); max-width: 1280px; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
 .recipe-grid article { min-height: 300px; padding: 36px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--white); }
 .recipe-grid article > span { color: var(--gold); font: italic 400 32px/1 var(--display); }
 .recipe-grid h3 { margin: 44px 0 15px; color: var(--forest); font: 400 clamp(27px, 3vw, 40px)/1.15 var(--display); }
 .recipe-grid p { max-width: 520px; margin: 0; color: var(--muted); font-size: 14px; line-height: 1.7; }
 .centered-cta { margin-top: 42px; }
+
+.kitchen-table { min-height: min(82vw, 900px); display: flex; align-items: flex-end; position: relative; overflow: hidden; background: var(--forest-dark); color: white; }
+.kitchen-table > img { object-fit: cover; object-position: center 48%; }
+.kitchen-table-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,42,35,.92) 0%, rgba(13,42,35,.62) 38%, rgba(13,42,35,.08) 72%), linear-gradient(0deg, rgba(13,42,35,.78), transparent 42%); }
+.kitchen-table-copy { width: min(760px, 58vw); padding: clamp(52px, 8vw, 120px) clamp(24px, 7vw, 112px); position: relative; z-index: 2; }
+.kitchen-table-copy h2 { margin-bottom: 20px; color: var(--cream); font-size: clamp(45px, 5.2vw, 76px); }
+.kitchen-table-copy > p:not(.eyebrow) { max-width: 630px; margin: 0 0 30px; color: rgba(255,255,255,.68); font-size: 15px; line-height: 1.75; }
+.kitchen-table-index { padding: 20px 26px; display: grid; grid-template-columns: repeat(4, auto); gap: 26px; position: absolute; z-index: 2; right: 4vw; bottom: 4vw; border: 1px solid rgba(255,255,255,.25); background: rgba(13,42,35,.74); backdrop-filter: blur(8px); }
+.kitchen-table-index span { color: var(--cream); font-size: 8px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
 
 .mechanism { display: grid; grid-template-columns: .8fr 1.2fr; gap: 8vw; background: var(--forest); color: white; }
 .mechanism-copy { position: sticky; top: 40px; align-self: start; }
@@ -179,6 +214,9 @@ footer > a:last-child { color: var(--cream); }
   .hero { grid-template-columns: 1fr; }
   .hero-visual { min-height: 620px; }
   .hero-visual::after { background: linear-gradient(0deg, rgba(13,42,35,.6), transparent 55%); }
+  .live-experience { grid-template-columns: 1fr; }
+  .experience-photo { min-height: 650px; }
+  .experience-photo::after { background: linear-gradient(0deg, rgba(13,42,35,.7), transparent 46%); }
   .mechanism, .chef, .faq, .not-for { grid-template-columns: 1fr; }
   .mechanism-copy { position: static; }
   .proof-cards { grid-template-columns: 1fr; }
@@ -186,6 +224,9 @@ footer > a:last-child { color: var(--cream); }
   .proof-cards p { margin-top: 32px; }
   .offer { grid-template-columns: 1fr; }
   .offer-card { max-width: 560px; }
+  .kitchen-table { min-height: 850px; }
+  .kitchen-table-copy { width: min(720px, 82vw); }
+  .kitchen-table-index { left: 7vw; right: auto; }
 }
 
 @media (max-width: 720px) {
@@ -207,6 +248,19 @@ footer > a:last-child { color: var(--cream); }
   .problem-grid article, .recipe-grid article { min-height: auto; }
   .problem-grid h3, .recipe-grid h3 { margin-top: 36px; }
   .belief blockquote { font-size: 40px; }
+  .experience-photo { min-height: 520px; }
+  .experience-copy { padding: 72px 24px; }
+  .experience-copy::before { display: none; }
+  .experience-steps li { grid-template-columns: 34px 90px 1fr; }
+  .recipe-gallery { grid-template-columns: 1fr; grid-template-rows: none; gap: 10px; }
+  .recipe-gallery .recipe-featured { grid-row: auto; min-height: 500px; }
+  .recipe-gallery article { min-height: 410px; }
+  .recipe-gallery article img { object-position: center 35%; }
+  .kitchen-table { min-height: 780px; align-items: flex-end; }
+  .kitchen-table > img { object-position: 58% center; }
+  .kitchen-table-shade { background: linear-gradient(0deg, rgba(13,42,35,.96) 0%, rgba(13,42,35,.72) 43%, rgba(13,42,35,.08) 76%); }
+  .kitchen-table-copy { width: 100%; padding: 70px 24px 150px; }
+  .kitchen-table-index { left: 24px; right: 24px; bottom: 28px; grid-template-columns: repeat(2, 1fr); gap: 13px; }
   .audience-grid article { min-height: 180px; }
   .audience-grid p { margin-top: 36px; }
   .chef-photo { box-shadow: -10px 10px 0 var(--cream); }
